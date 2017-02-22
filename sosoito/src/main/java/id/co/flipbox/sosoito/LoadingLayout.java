@@ -17,19 +17,23 @@ public class LoadingLayout extends RelativeLayout {
 
     public LoadingLayout(Context context) {
         super(context);
+        init();
     }
 
     public LoadingLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init();
     }
 
     public LoadingLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        init();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public LoadingLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+        init();
     }
 
     private void init() {
