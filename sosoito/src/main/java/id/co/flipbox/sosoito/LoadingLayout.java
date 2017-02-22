@@ -34,8 +34,14 @@ public class LoadingLayout extends RelativeLayout {
 
     private void init() {
         inflate(getContext(), R.layout.progressbar, null);
+        reset();
+    }
+
+    public void reset()
+    {
         loadingView = findViewById(R.id.progressbar);
         progressDialog = new ProgressDialog(getContext());
+        progressDialog.setIndeterminate(true);
     }
 
     public void setLoadingView(View view)
@@ -48,16 +54,31 @@ public class LoadingLayout extends RelativeLayout {
         this.progressDialog = progressDialog;
     }
 
+    public void showProgressDialog ()
+    {
+        if (progressDialog != null && !progressDialog.isShowing())
+        {
+            progressDialog.show();
+        }
+    }
+
     public void showProgressDialog (String message)
     {
-        progressDialog.setIndeterminate(true);
+        if (progressDialog != null && !progressDialog.isShowing())
+        {
+            progressDialog.setMessage(message);
+            progressDialog.show();
+        }
+    }
+
+    public void setProgressDialogMessage(String message)
+    {
         progressDialog.setMessage(message);
-        progressDialog.show();
     }
 
     public void hideProgressDialog ()
     {
-        if (progressDialog.isShowing())
+        if (progressDialog != null && progressDialog.isShowing())
         {
             progressDialog.dismiss();
         }
