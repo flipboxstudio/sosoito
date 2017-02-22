@@ -37,13 +37,13 @@ public class LoadingLayout extends RelativeLayout {
     }
 
     private void init() {
-        inflate(getContext(), R.layout.progressbar, null);
+        inflate(getContext(), R.layout.progressbar, this);
         reset();
     }
 
     public void reset()
     {
-        loadingView = findViewById(R.id.sosoitoprogressbar);
+        loadingView = findViewById(R.id.progressbar);
         progressDialog = new ProgressDialog(getContext());
         progressDialog.setIndeterminate(true);
     }
