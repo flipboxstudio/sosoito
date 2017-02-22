@@ -43,7 +43,7 @@ public class LoadingLayout extends RelativeLayout {
 
     public void reset()
     {
-        loadingView = findViewById(R.id.progressbar);
+        loadingView = findViewById(R.id.sosoitoprogressbar);
         progressDialog = new ProgressDialog(getContext());
         progressDialog.setIndeterminate(true);
     }
