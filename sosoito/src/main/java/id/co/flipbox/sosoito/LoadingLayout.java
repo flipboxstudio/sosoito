@@ -48,11 +48,6 @@ public class LoadingLayout extends RelativeLayout {
         progressDialog.setIndeterminate(true);
     }
 
-    public void setLoadingView(View view)
-    {
-        this.loadingView = view;
-    }
-
     public void setProgressDialog(ProgressDialog progressDialog)
     {
         this.progressDialog = progressDialog;
