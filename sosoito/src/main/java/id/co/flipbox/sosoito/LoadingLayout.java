@@ -46,6 +46,8 @@ public class LoadingLayout extends RelativeLayout {
         loadingView = findViewById(R.id.progressbar);
         progressDialog = new ProgressDialog(getContext());
         progressDialog.setIndeterminate(true);
+        progressDialog.setCancelable(false);
+        progressDialog.setCanceledOnTouchOutside(false);
     }
 
     public void setProgressDialog(ProgressDialog progressDialog)
@@ -83,9 +85,10 @@ public class LoadingLayout extends RelativeLayout {
         }
     }
 
-    public void showLoading(final boolean show, final View screenView) {
+    public void showLoading(final boolean show) {
+        for (int i=0; i < this.getChildCount(); i++)
+            this.getChildAt(0).setVisibility(show ? View.GONE : View.VISIBLE);
         loadingView.setVisibility(show ? View.VISIBLE : View.GONE);
-        screenView.setVisibility(show ? View.GONE : View.VISIBLE);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
