@@ -11,7 +11,7 @@ repositories {
 ```
 ```
 dependencies {
-  compile 'com.github.suhafer:sosoito:1.01'
+  compile 'com.github.suhafer:sosoito:latest-release'
 }
 ```
 ## Usage
