@@ -10,9 +10,11 @@ import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class LoadingLayout extends RelativeLayout {
-    private View loadingView;
+    private View           loadingView;
+    private TextView       loadingMessage;
     private ProgressDialog progressDialog;
 
     public LoadingLayout(Context context) {
@@ -44,6 +46,7 @@ public class LoadingLayout extends RelativeLayout {
     public void reset()
     {
         loadingView = findViewById(R.id.progressbar);
+        loadingMessage = (TextView) findViewById(R.id.progressmessage);
         progressDialog = new ProgressDialog(getContext());
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
@@ -87,8 +90,20 @@ public class LoadingLayout extends RelativeLayout {
 
     public void showLoading(final boolean show) {
         for (int i=0; i < this.getChildCount(); i++)
-            this.getChildAt(0).setVisibility(show ? View.GONE : View.VISIBLE);
+        {
+            this.getChildAt(i).setVisibility(show ? View.INVISIBLE : View.VISIBLE);
+        }
         loadingView.setVisibility(show ? View.VISIBLE : View.GONE);
+    }
+
+    public void showLoading(final boolean show, final String message) {
+        for (int i=0; i < this.getChildCount(); i++)
+        {
+            this.getChildAt(i).setVisibility(show ? View.INVISIBLE : View.VISIBLE);
+        }
+        loadingView.setVisibility(show ? View.VISIBLE : View.GONE);
+        loadingMessage.setText(message);
+        loadingMessage.setVisibility(show ? View.VISIBLE : View.GONE);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
