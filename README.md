@@ -1,5 +1,7 @@
+[![](https://jitpack.io/v/flipboxstudio/sosoito.svg)](https://jitpack.io/#flipboxstudio/sosoito)
+
 # Sosoito
-Sosoito is layout library for Android that can be used to simplify basic needs for loading/progressing.
+Sosoito is layout library for Android that can be used to simplify basic needs for loading/progression state.
 
 ## Installation
 Sosoito can installed by adding the following dependency to your build.gradle file:
@@ -11,7 +13,7 @@ repositories {
 ```
 ```
 dependencies {
-  compile 'com.github.suhafer:sosoito:latest-release'
+  compile 'com.github.flipboxstudio:sosoito:latest-release'
 }
 ```
 ## Usage
@@ -32,3 +34,14 @@ LoadingLayout loadingLayout = (LoadingLayout) findViewById(R.id.loadingLayout);
 loadingLayout.showLoading(true);
 ...
 ```
+
+###### Available Methods
+Loading (in) layout
+* `showLoading(boolean)`
+* `showLoading(boolean, message)`
+
+Progress Dialog
+* `showProgressDialog()`
+* `showProgressDialog(message)`
+* `setProgressDialogMessage(message)`
+* `hideProgressDialog()`
