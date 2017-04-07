@@ -1,7 +1,11 @@
 [![](https://jitpack.io/v/flipboxstudio/sosoito.svg)](https://jitpack.io/#flipboxstudio/sosoito)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Sosoito-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/5518)
 
 # Sosoito
 Sosoito is layout library for Android that can be used to simplify basic needs for loading/progression state.
+
+[Demo / Sample Project](https://github.com/flipboxstudio/mvvm-starter)
+
 
 ## Installation
 Sosoito can installed by adding the following dependency to your build.gradle file:
