@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">sosoito</string>
+    <string name="text_empty_message">There is no data to show.</string>
 </resources>

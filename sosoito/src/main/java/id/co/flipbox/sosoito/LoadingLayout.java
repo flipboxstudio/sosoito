@@ -9,12 +9,16 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class LoadingLayout extends RelativeLayout {
     private View           loadingView;
     private TextView       loadingMessage;
+    private View           emptyView;
+    private ImageView      emptyIcon;
+    private TextView       emptyMessage;
     private ProgressDialog progressDialog;
 
     public LoadingLayout(Context context) {
@@ -40,6 +44,7 @@ public class LoadingLayout extends RelativeLayout {
 
     private void init() {
         inflate(getContext(), R.layout.progressbar, this);
+        inflate(getContext(), R.layout.empty_view, this);
         reset();
     }
 
@@ -47,6 +52,13 @@ public class LoadingLayout extends RelativeLayout {
     {
         loadingView = findViewById(R.id.progressbar);
         loadingMessage = (TextView) findViewById(R.id.progressmessage);
+
+        emptyView = findViewById(R.id.empty_view);
+        emptyIcon = (ImageView) findViewById(R.id.empty_icon);
+        emptyMessage = (TextView) findViewById(R.id.empty_message);
+        emptyIcon.setImageResource(R.drawable.icon_problem);
+        emptyMessage.setText(R.string.text_empty_message);
+
         progressDialog = new ProgressDialog(getContext());
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
@@ -93,6 +105,7 @@ public class LoadingLayout extends RelativeLayout {
         {
             this.getChildAt(i).setVisibility(show ? View.INVISIBLE : View.VISIBLE);
         }
+        emptyView.setVisibility(View.GONE);
         loadingView.setVisibility(show ? View.VISIBLE : View.GONE);
     }
 
@@ -101,6 +114,7 @@ public class LoadingLayout extends RelativeLayout {
         {
             this.getChildAt(i).setVisibility(show ? View.INVISIBLE : View.VISIBLE);
         }
+        emptyView.setVisibility(View.GONE);
         loadingView.setVisibility(show ? View.VISIBLE : View.GONE);
         loadingMessage.setText(message);
         loadingMessage.setVisibility(show ? View.VISIBLE : View.GONE);
@@ -126,5 +140,29 @@ public class LoadingLayout extends RelativeLayout {
                 loadingView.setVisibility(show ? View.VISIBLE : View.GONE);
             }
         });
+    }
+
+    public void showEmptyView(final boolean show)
+    {
+        emptyView.setVisibility(show ? View.VISIBLE : View.GONE);
+    }
+
+    public void showEmptyView(final boolean show, String message)
+    {
+        emptyMessage.setText(message);
+        showEmptyView(show);
+    }
+
+    public void showEmptyView(final boolean show, int iconResId)
+    {
+        emptyIcon.setImageResource(iconResId);
+        showEmptyView(show);
+    }
+
+    public void showEmptyView(final boolean show, int iconResId, String message)
+    {
+        emptyIcon.setImageResource(iconResId);
+        emptyMessage.setText(message);
+        showEmptyView(show);
     }
 }

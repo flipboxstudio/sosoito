@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_double_super_large">128dp</dimen>
+    <dimen name="space_super_extra_large">72dp</dimen>
+    <dimen name="space_super_large">64dp</dimen>
+    <dimen name="space_extra_large">58dp</dimen>
+    <dimen name="space_large">32dp</dimen>
+    <dimen name="space_medium">24dp</dimen>
+    <dimen name="space_small">16dp</dimen>
+    <dimen name="space_extra_small">8dp</dimen>
+    <dimen name="space_super_small">4dp</dimen>
+    <dimen name="space_tiny">2dp</dimen>
+    <dimen name="space_zero">0dp</dimen>
+</resources>
