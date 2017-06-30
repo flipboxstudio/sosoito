@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/customprogressbar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:layout_margin="@dimen/space_extra_small"
+    android:visibility="gone">
+
+    <ImageView
+        android:id="@+id/cpb_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/cpb_default_icon"/>
+
+    <TextView
+        android:id="@+id/cpb_message"
+        android:layout_below="@id/cpb_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/space_medium"
+        android:text="@string/text_loading_message"
+        android:textAlignment="center"
+        android:visibility="gone"/>
+
+</RelativeLayout>
