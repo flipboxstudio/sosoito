@@ -40,6 +40,18 @@ loadingLayout.showLoading(true);
 ```
 
 ###### Available Methods
+Empty Layout
+* `showEmptyView(boolean)`
+* `showEmptyView(boolean, message)`
+* `showEmptyView(boolean, iconResourceId)`
+* `showEmptyView(boolean, iconResourceId, message)`
+
+Custom Loading Layout
+* `showCustomLoading(boolean)`
+* `showCustomLoading(boolean, message)`
+* `showCustomLoading(boolean, iconResourceId)`
+* `showCustomLoading(boolean, iconResourceId, message)`
+
 Loading (in) layout
 * `showLoading(boolean)`
 * `showLoading(boolean, message)`
@@ -49,3 +61,7 @@ Progress Dialog
 * `showProgressDialog(message)`
 * `setProgressDialogMessage(message)`
 * `hideProgressDialog()`
+
+---
+![screenshot](https://puu.sh/wyeSm/e0972a485c.png)
+
